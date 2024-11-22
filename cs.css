@@ -1,239 +1,161 @@
-/* ======== 基本スタイルのリセットと標準化 ======== */
+@charset "UTF-8";
 
 html {
-    -webkit-text-size-adjust: 100%; /* モバイルでの文字サイズ調整を無効化 */
-    box-sizing: border-box; /* ボックスモデルを統一 */
-    -moz-tab-size: 4;
-    tab-size: 4;
-    word-break: normal; /* 単語の折り返しを通常に設定 */
+  font-size: 100%;
 }
-
-*, *::after, *::before {
-    box-sizing: inherit; /* 全要素がhtmlのbox-sizingを継承 */
-    background-repeat: no-repeat; /* 背景画像のリピートを無効化 */
+body {
+  color: #383e45;
+  font-size: 0.9rem;
 }
-
-* {
-    margin: 0; /* 余白リセット */
-    padding: 0; /* パディングリセット */
-}
-
-::before, ::after {
-    text-decoration: inherit; /* 装飾を親要素から継承 */
-    vertical-align: inherit; /* 縦方向の位置揃えを継承 */
-}
-
-/* ======== 要素ごとのスタイル調整 ======== */
-
-/* 視覚的に区切る水平線 */
-hr {
-    color: inherit;
-    height: 0;
-    overflow: visible; /* 水平線の内容が見えるように */
-}
-
-/* HTML5セクション要素 */
-details, main {
-    display: block;
-}
-
-summary {
-    display: list-item; /* 折りたたみ可能要素の表示調整 */
-}
-
-/* 小さな文字サイズ */
-small {
-    font-size: 80%;
-}
-
-/* 非表示要素 */
-[hidden] {
-    display: none;
-}
-
-/* 略語に点線下線 */
-abbr[title] {
-    text-decoration: underline dotted;
-    border-bottom: none;
-}
-
-/* リンクスタイル */
 a {
-    background-color: transparent;
+  text-decoration: none;
 }
-
-a:focus, a:hover {
-    outline-width: 0; /* フォーカス時の枠線を無効化 */
-}
-
-/* コードやキーボード入力用フォント */
-code, kbd, pre, samp {
-    font-family: monospace, monospace; /* 等幅フォント */
-}
-
-pre {
-    font-size: 1em; /* 標準フォントサイズ */
-}
-
-/* 太字の強調 */
-b, strong {
-    font-weight: bolder;
-}
-
-/* 上付き文字・下付き文字 */
-sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-sup {
-    top: -0.5em;
-}
-
-/* テーブルのスタイル */
-table {
-    border-color: inherit;
-    text-indent: 0;
-}
-
-/* iframeのスタイル */
-iframe {
-    border-style: none; /* 枠線を非表示 */
-}
-
-/* 入力フィールドの角丸無効化 */
-input {
-    border-radius: 0;
-}
-
-/* 数値入力のスピンボタン調整 */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-    height: auto;
-}
-
-/* 検索フィールドの調整 */
-[type=search] {
-    -webkit-appearance: textfield; /* テキストフィールドとして表示 */
-    outline-offset: -2px;
-}
-
-[type=search]::-webkit-search-decoration {
-    -webkit-appearance: none; /* デフォルトの検索アイコンを無効化 */
-}
-
-/* テキストエリアの調整 */
-textarea {
-    overflow: auto;
-    resize: vertical; /* 垂直方向のサイズ変更を許可 */
-}
-
-/* フォーム要素 */
-button, input, optgroup, select, textarea {
-    font: inherit; /* 親要素からフォントを継承 */
-    background-color: transparent;
-    border-style: none;
-}
-
-optgroup {
-    font-weight: 700;
-}
-
-/* ボタン */
-button {
-    overflow: visible;
-    text-transform: none;
-}
-
-button::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-}
-
-button:-moz-focusring {
-    outline: 1px dotted ButtonText;
-}
-
-/* リセットボタンと送信ボタン */
-[type=reset], [type=submit], button, html [type=button] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-
-/* フォーカス時のアウトラインを削除 */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
-    outline-width: 0;
-}
-
-/* セレクトボックス */
-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-
-select::-ms-expand {
-    display: none; /* 展開アイコンを非表示 */
-}
-
-/* ラベルフィールドセットのスタイル */
-legend {
-    border: 0;
-    color: inherit;
-    display: table;
-    max-width: 100%;
-    white-space: normal;
-}
-
-/* ファイルアップロードボタン */
-::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    color: inherit;
-    font: inherit;
-}
-
-/* 無効状態の要素 */
-[disabled] {
-    cursor: default; /* デフォルトのカーソル */
-}
-
-/* 画像のスタイル */
 img {
-    border-style: none;
-    max-width: 100%; /* スマホ画面に収まるように調整 */
-    height: auto;
+  max-width: 100%;
+  height: auto;
+  display: block; /* 不要な余白を削除 */
 }
 
-/* プログレスバー */
-progress {
-    vertical-align: baseline;
+li {
+  list-style: none;
 }
-
-/* ARIA属性 */
-[aria-busy=true] {
-    cursor: progress; /* 処理中カーソル */
+.site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
 }
-
-[aria-controls], [aria-disabled=true] {
-    cursor: pointer; /* ポインタを表示 */
+.site-title a {
+  display: block;
 }
-
-[aria-disabled=true] {
-    cursor: default; /* デフォルトのカーソル */
+.section-title {
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: solid 1px #383e45;
 }
+.content-title {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+  text-align: center;
+}
+/* ヘッダー */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#header ul {
+  display: flex;
+  padding: 10px 0;
+}
+#header li {
+  margin-left: 30px;
+}
+#header li a {
+  color: #24292e;
+}
+#header li a:hover {
+  opacity: 0.7;
+}
+/* mainvisual */
+/*#mainvisual {
+  margin-bottom: 80px;
+}
+#mainvisual img {
+  width: 100%;
+  max-width: 700px;
+  height: 432px;
+  object-fit: cover;
+}*/
+#mainvisual {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 横方向中央揃え */
+    align-items: center; /* 縦方向中央揃え */
+    margin-bottom: 80px; /* 下部の余白（任意） */
+    width: 100%;
+    height: 40vh; /* 画面の高さを100%に */
+  }
+  
+  #mainvisual img {
+    width: 100%;
+    max-width: 400px; /* 最大幅 */
+    height: 247px; /* 高さ */
+    object-fit: cover; /* 画像が枠に収まるように */
+  }
+  
+/* Stringing */
+#Stringing .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#Stringing img {
+  width: 400px;
+  height: 500px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+#Stringing .text {
+  text-align: left;
+}
+/* bicycle */
+#bicycle ul {
+  display: flex;
+  justify-content: space-between;
+}
+#bicycle li {
+  width: 32%;
+}
+/* footer */
+#footer {
+  font-size: 0.5rem;
+  padding: 10px 0;
+  text-align: center;
+}
+/* SP */
+@media screen and (max-width: 600px) {
+  /* mainvisual */
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
+  /* about */
+  #about .content {
+    flex-direction: column;
+  }
+  #about img {
+    margin-right: 0;
+  }
+  /* bicycle */
+  #bicycle ul {
+    flex-direction: column;
+  }
+  #bicycle li {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) { 
+  #header .site-title img {
+    max-width: 80%; /* ロゴサイズを縮小 */
+    margin: auto;
+  }
 
-/* ======== スマホ用のレスポンシブスタイル ======== */
+  /* ナビゲーションメニューを縦並びに変更 */
+  nav ul {
+    display: flex;
+    flex-direction: column; /* 横並びから縦並びに変更 */
+    align-items: center;
+    padding: 0;
+  }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 14px; /* モバイル向けにフォントサイズを調整 */
-        line-height: 1.6; /* 読みやすさを向上 */
-    }
-
-    img {
-        max-width: 100%;
-        height: auto; /* ス
+  nav ul li {
+    margin: 10px 0;
+  }
+}
