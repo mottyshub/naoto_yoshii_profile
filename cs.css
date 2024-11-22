@@ -12,7 +12,10 @@ a {
 }
 img {
   max-width: 100%;
+  height: auto;
+  display: block; /* 不要な余白を削除 */
 }
+
 li {
   list-style: none;
 }
