@@ -247,3 +247,21 @@ progress {
         font-size: 0.9em; /* コード部分を少し縮小 */
     }
 }
+
+header .site-title a img {
+  width: 12.5vw; /* 画面幅の1/8を指定 */
+  height: auto; /* アスペクト比を維持 */
+  max-width: 180px; /* 最大幅を設定（必要なら調整） */
+}
+
+@media (max-width: 768px) {
+  header .site-title a img {
+    width: 16vw; /* スマホでやや大きめに */
+  }
+}
+
+@media (min-width: 1200px) {
+  header .site-title a img {
+    width: 10vw; /* 大画面では小さめに */
+  }
+}
